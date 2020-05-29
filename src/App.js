@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import { Card, Icon, Image } from 'semantic-ui-react'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App__header">
         <Card>
           <Image src={logo} wrapped ui={false} />
           <Card.Content>
@@ -19,9 +19,7 @@ function App() {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <a>
-              <Icon name='user' />
-            </a>
+            <a><Icon name='user' /></a>
           </Card.Content>
         </Card>
       </header>
