@@ -40,6 +40,13 @@ class VistaRAM extends React.Component {
       </Dimmer>);
   }
 
+  renderCell(data) {
+    if (data.toString().includes('/avatar/')) {
+      return <img className="avatar-img" src={data} />
+    }
+    return data;
+  }
+
   renderTable() {
     const { data } = this.state;
     return(
@@ -49,17 +56,13 @@ class VistaRAM extends React.Component {
           <Table celled>
             <Table.Header>
               <Table.Row>
-                <Table.HeaderCell>Nombre</Table.HeaderCell>
-                <Table.HeaderCell>Status</Table.HeaderCell>
-                <Table.HeaderCell>Especie</Table.HeaderCell>
+                {Object.keys(data[0]).map(key => <Table.HeaderCell>{key}</Table.HeaderCell>)}
               </Table.Row>
             </Table.Header>
             <Table.Body>
               {data.map(character => 
                 <Table.Row>
-                  <Table.Cell>{character.name}</Table.Cell>
-                  <Table.Cell>{character.status}</Table.Cell>
-                  <Table.Cell>{character.species}</Table.Cell>
+                  {Object.keys(character).map(key => <Table.Cell>{typeof character[key] === 'object' ? '-' : this.renderCell(character[key])}</Table.Cell>)}
                 </Table.Row>)}
             </Table.Body>
             <Table.Footer>
