@@ -56,13 +56,12 @@ class VistaRAM extends React.Component {
             </Table.Header>
             <Table.Body>
               {data.map(character => 
-                  <Table.Row>
-                    <Table.Cell>{character.name}</Table.Cell>
-                    <Table.Cell>{character.status}</Table.Cell>
-                    <Table.Cell>{character.species}</Table.Cell>
-                  </Table.Row>)}
+                <Table.Row>
+                  <Table.Cell>{character.name}</Table.Cell>
+                  <Table.Cell>{character.status}</Table.Cell>
+                  <Table.Cell>{character.species}</Table.Cell>
+                </Table.Row>)}
             </Table.Body>
-
             <Table.Footer>
             </Table.Footer>
           </Table>
